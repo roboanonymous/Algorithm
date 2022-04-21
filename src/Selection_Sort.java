@@ -1,28 +1,32 @@
-//Bubble Sort
+//Selection Sort
 //Time Complexity O(n^2)
+
 
 import java.util.Scanner;
 
-public class Bubble_Sort {
-	public static void Bubble_sort(int[] arr , int n)
+public class Selection_Sort {
+	public static void Selection_sort(int[] arr, int n )
 	{
-		for(int j= 0;j<n-1;j++)
+		int small;
+		for(int j=0;j<n;j++)
 		{
-			for(int l=0;l<n-j-1;l++)
+			small = j;
+			for(int l=j+1; l<n; l++)
 			{
-				if(arr[l]>arr[l+1])
+				if(arr[l]<arr[small])
 				{
-					int temp = arr[l];
-					arr[l] = arr[l+1];
-					arr[l+1] = temp;
+					small = l;
 				}
 			}
+			int temp = arr[small];
+			arr[small] = arr[j];
+			arr[j] = temp;
 		}
-		
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter n:");
 		int n = sc.nextInt();
@@ -33,14 +37,13 @@ public class Bubble_Sort {
 			arr[i] = sc.nextInt();
 		}
 		
-		Bubble_sort(arr,n);
+		Selection_sort(arr,n);
 		
 		// Give OUTPUT
 		for(int k=0;k<n;k++)
 		{
 			System.out.println(arr[k]);
 		}
-		
 
 	}
 
