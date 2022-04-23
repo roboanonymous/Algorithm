@@ -1,3 +1,6 @@
+//Quick Sort
+//Time Complexity average O(n*log n).
+//Time Complexity worst O(n^2)
 import java.util.Scanner;
 
 public class Quick_sort {
